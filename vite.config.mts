@@ -8,12 +8,9 @@ export default defineConfig({
     FullReload(['config/routes.rb', 'app/views/**/*'])
   ],
   server: {
-    host: 'localhost', // changé de true à 'localhost'
-    strictPort: true,
     hmr: {
-      protocol: 'ws',
       host: 'localhost',
-      port: 3036
+      port: 3036 // Must match Vite port (vite.json) for dev env.
     }
   }
 })

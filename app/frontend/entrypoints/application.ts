@@ -1,6 +1,9 @@
 // Example: Import a stylesheet in app/frontend/index.css
 import '~/index.css'
-import '@hotwired/turbo-rails'
+
+// Import optionnel : Turbo est déjà chargé automatiquement par la gem turbo-rails.
+// Nécessaire uniquement si vous souhaitez personnaliser son comportement
+// import '@hotwired/turbo-rails'
 
 // Example: Load Rails libraries in Vite.
 //
