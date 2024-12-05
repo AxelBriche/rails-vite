@@ -1,5 +1,5 @@
 // Example: Import a stylesheet in app/frontend/index.css
-import '~/index.css'
+// import '~/file.ts/css'
 
 // Import optionnel : Turbo est déjà chargé automatiquement par la gem turbo-rails.
 // Nécessaire uniquement si vous souhaitez personnaliser son comportement
