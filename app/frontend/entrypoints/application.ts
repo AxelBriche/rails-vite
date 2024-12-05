@@ -1,5 +1,6 @@
 // Example: Import a stylesheet in app/frontend/index.css
 import '~/index.css'
+import '@hotwired/turbo-rails'
 
 // Example: Load Rails libraries in Vite.
 //
