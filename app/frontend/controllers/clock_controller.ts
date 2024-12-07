@@ -1,43 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 
-/**
- * Controller Stimulus pour afficher l'heure actuelle
- * Utilisation : <div data-controller="clock"></div>
- */
-export default class ClockController extends Controller {
-  declare readonly element: HTMLElement
-  private interval: number
+export default class extends Controller {
+  private interval: number | undefined
 
-  /**
-   * Appelé quand le controller est connecté à l'élément DOM
-   */
-  connect() {
-    // Met à jour l'heure immédiatement
+  connect(): void {
     this.updateTime()
-    // Met à jour l'heure chaque seconde
     this.interval = window.setInterval(() => this.updateTime(), 1000)
   }
 
-  /**
-   * Appelé quand le controller est déconnecté de l'élément DOM
-   */
-  disconnect() {
-    // Nettoie l'intervalle pour éviter les fuites de mémoire
-    clearInterval(this.interval)
+  disconnect(): void {
+    if (this.interval) {
+      clearInterval(this.interval)
+    }
   }
 
-  /**
-   * Met à jour l'heure dans l'élément
-   */
-  private updateTime() {
-    const now = new Date()
-    const dateStr = now.toLocaleDateString('fr-FR', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-    const timeStr = now.toLocaleTimeString()
-    this.element.textContent = `${dateStr} ${timeStr}`
+  private updateTime(): void {
+    this.element.textContent = new Date().toLocaleTimeString()
   }
 }
