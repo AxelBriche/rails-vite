@@ -1,8 +1,8 @@
 <div class="flex flex-col items-center justify-center p-4 space-y-4">
-  <%= form_with url: pages_say_hello_path, method: :post do |form| %>
+  <%= form_with url: clock_path, method: :post do |form| %>
     <%= form.submit "Show clock (with turbo)", class: "bg-blue-500 text-white px-4 py-2 rounded" %>
   <% end %>
-  <%= form_with url: pages_say_hello_path, method: :post, data: { turbo: false } do |form| %>
+  <%= form_with url: clock_path, method: :post, data: { turbo: false } do |form| %>
     <%= form.submit "Show clock (without turbo)", class: "bg-blue-500 text-white px-4 py-2 rounded" %>
   <% end %>
   <div class="text-center">
